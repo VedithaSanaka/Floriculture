@@ -1,14 +1,14 @@
 # Floriculture
 # Flourishing Florals : Enhancing Floriculture Productivity Through Sustainable Practices
-Overview
+# Overview
 This project is a web application designed to provide comprehensive information about various flowering plants and a dynamic planting calendar based on geographical regions. Users can search for specific flowers and view details such as soil type, fertility level, irrigation methods, climatic conditions, possible pests, and control measures. A key feature includes multilingual support for both the displayed flower data and the user interface labels.
 
 The application also offers a planting calendar that dynamically updates based on the selected region, showcasing the best times to plant various flowering plants throughout the year.
 
-Features
+# Features
 Flower Information Retrieval: Fetches detailed information about flowering plants from a MySQL database.
 
-Multilingual Support:
+# Multilingual Support:
 
 Data: Retrieves flower-specific data in English, Telugu, Hindi, and Urdu (based on selected language).
 
@@ -22,7 +22,7 @@ User-Friendly Interface: Simple HTML forms for search and region selection.
 
 Basic Styling: (Mention if you have a Flower.css or similar for basic aesthetics).
 
-Technologies Used
+# Technologies Used
 Frontend:
 
 HTML5
