@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Flower.css">
+    <style>
+        /* General Reset */
+        body, h1, h3, p, ul, li {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 10px;
+            overflow: auto;
+        }
+
+        /* Seed Quality Section */
+        .seed-quality {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 900px;
+            width: 100%; /* Makes it responsive */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+            height: 100%;
+        }
+
+        /* Headings and Text */
+        .heading {
+            font-size:3em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            font-size: 1.5rem;
+            line-height: 1.6;
+            color: #0d0808;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Responsive Design for Smaller Screens */
+        @media (max-width: 768px) {
+            .seed-quality {
+                padding: 15px;
+                margin: 0;
+                box-shadow: none; 
+            }
+
+            .heading, h3 {
+                font-size: 1.6em; 
+                margin-bottom: 15px;
+            }
+
+            .content {
+                font-size: 1em; 
+            }
+
+            ul {
+                padding-left: 15px;
+            }
+        }
+
+        /* For even smaller screens */
+        @media (max-width: 480px) {
+            .heading, h3 {
+                font-size: 1.4em;
+                margin-bottom: 10px;
+            }
+
+            .content {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="seed-quality" id="seed-quality" style="background-image: url('D.jpg');background-repeat: no-repeat;background-size: cover;">
+        <h1 class="heading"><span data-key="seed-quality-heading">Seed Quality Testing</span></h1>
+        <div class="content">
+            <h3 data-key="visual-inspection-title">Visual Inspection</h3>
+            <p data-key="visual-inspection-desc">Check for uniform size, shape, and color. Avoid seeds with cracks, mold, or other imperfections.</p>
+    
+            <h3 data-key="float-test-title">Float Test</h3>
+            <p data-key="float-test-desc">Place seeds in a bowl of water. Viable seeds will sink, while non-viable seeds will float. Let the seeds sit for about 15-30 minutes.</p>
+    
+            <h3 data-key="germination-test-title">Germination Test</h3>
+            <p data-key="germination-test-desc">Use moist paper towels, a plastic bag, and a warm location to test seed viability:</p>
+            <ul>
+                <li data-key="germination-step-1">Dampen a paper towel and place a few seeds on it.</li>
+                <li data-key="germination-step-2">Fold the paper towel over the seeds and place it in a plastic bag.</li>
+                <li data-key="germination-step-3">Keep the bag in a warm spot, such as on top of a refrigerator.</li>
+                <li data-key="germination-step-4">Check the seeds after a few days to see if they have sprouted.</li>
+            </ul>
+    
+            <h3 data-key="cut-test-title">Cut Test</h3>
+            <p data-key="cut-test-desc">Carefully cut a few seeds open and examine the insides. A healthy seed will have a firm, white interior.</p>
+    
+            <h3 data-key="additional-notes-title">Additional Notes</h3>
+            <p data-key="additional-notes-desc">For best results, use a sufficient number of seeds (at least 10-20) for testing to get reliable results. Be patient, as some seeds may take longer to show signs of germination.</p>
+        </div>
+    </section>
+
+    <script>
+        const translations = {
+            en: {
+                "seed-quality-heading": "Seed Quality Testing",
+                "visual-inspection-title": "Visual Inspection",
+                "visual-inspection-desc": "Check for uniform size, shape, and color. Avoid seeds with cracks, mold, or other imperfections.",
+                "float-test-title": "Float Test",
+                "float-test-desc": "Place seeds in a bowl of water. Viable seeds will sink, while non-viable seeds will float. Let the seeds sit for about 15-30 minutes.",
+                "germination-test-title": "Germination Test",
+                "germination-test-desc": "Use moist paper towels, a plastic bag, and a warm location to test seed viability:",
+                "germination-step-1": "Dampen a paper towel and place a few seeds on it.",
+                "germination-step-2": "Fold the paper towel over the seeds and place it in a plastic bag.",
+                "germination-step-3": "Keep the bag in a warm spot, such as on top of a refrigerator.",
+                "germination-step-4": "Check the seeds after a few days to see if they have sprouted.",
+                "cut-test-title": "Cut Test",
+                "cut-test-desc": "Carefully cut a few seeds open and examine the insides. A healthy seed will have a firm, white interior.",
+                "additional-notes-title": "Additional Notes",
+                "additional-notes-desc": "For best results, use a sufficient number of seeds (at least 10-20) for testing to get reliable results. Be patient, as some seeds may take longer to show signs of germination."
+            },
+            te: {
+                "seed-quality-heading": "ఆవలి నాణ్యత పరీక్ష",
+                "visual-inspection-title": "విజువల్ ఇన్స్పెక్షన్",
+                "visual-inspection-desc": "ఒకే పరిమాణం, ఆకారం, మరియు రంగు ఉన్నదీ పరీక్షించండి. పగిలిన, మొలిచి లేదా ఇతర దోషాలతో ఉన్న విత్తనాలను నివారించండి.",
+                "float-test-title": "ఫ్లోట్ టెస్ట్",
+                "float-test-desc": "విత్తనాలను నీటితో నిండిన గిన్నెలో పెట్టండి. చెల్లుబాటు గల విత్తనాలు పడిపోతాయి, కాని చెల్లుబాటు కాని విత్తనాలు తేలుతాయి. 15-30 నిమిషాలు విత్తనాలను ఆపనివ్వండి.",
+                "germination-test-title": "పంట పరీక్ష",
+                "germination-test-desc": "విత్తనాల జీవక్రియను పరీక్షించడానికి తేమयुक्त కాగితపు త్రేలను, ప్లాస్టిక్ బ్యాగ్‌ను మరియు గాలి వేడి ప్రదేశాన్ని ఉపయోగించండి:",
+                "germination-step-1": "ఒక కాగితపు త్రేను తేమతో చిదిమి, కొన్ని విత్తనాలను అందులో పెట్టండి.",
+                "germination-step-2": "విత్తనాలను కాగితపు త్రేలో మడత పెట్టి, వాటిని ప్లాస్టిక్ బ్యాగ్‌లో ఉంచండి.",
+                "germination-step-3": "బ్యాగ్‌ను ఒక వేడి ప్రదేశంలో ఉంచండి, ఉదాహరణకు ఫ్రిజ్ మీద.",
+                "germination-step-4": "కొన్ని రోజులకు విత్తనాలు పెరిగాయా లేదా అని చూసేందుకు వాటిని తనిఖీ చేయండి.",
+                "cut-test-title": "కట్ టెస్ట్",
+                "cut-test-desc": "కొన్ని విత్తనాలను జాగ్రత్తగా కోసి లోపల వాటిని పరిశీలించండి. ఒక ఆరోగ్యకరమైన విత్తనం గట్టిగా, తెలుపు లోపలి భాగం ఉంటుంది.",
+                "additional-notes-title": "అదనపు సూచనలు",
+                "additional-notes-desc": "అత్యుత్తమ ఫలితాలు కోసం, విత్తనాలను పరీక్షించడానికి సరిపడా సంఖ్య (లాంఛనంగా 10-20) ఉపయోగించండి. కొన్ని విత్తనాలు మొలకెత్తడానికి ఎక్కువ సమయం పడవచ్చు, కాబట్టి నిరీక్షించండి."
+            },
+            hi: {
+                "seed-quality-heading": "बीज गुणवत्ता परीक्षण",
+                "visual-inspection-title": "दृश्य निरीक्षण",
+                "visual-inspection-desc": "आकार, रूप और रंग में समानता की जांच करें। दरारों, फफूंदी या अन्य दोषों वाले बीजों से बचें।",
+                "float-test-title": "फ्लोट परीक्षण",
+                "float-test-desc": "बीजों को पानी के कटोरे में डालें। जीवनक्षम बीज डूब जाएंगे, जबकि अव्यावहारिक बीज तैरेंगे। बीजों को लगभग 15-30 मिनट तक बैठने दें।",
+                "germination-test-title": "अंकुरण परीक्षण",
+                "germination-test-desc": "बीजों की जीवन क्षमता का परीक्षण करने के लिए गीले कागज़ तौलिये, एक प्लास्टिक बैग, और एक गर्म स्थान का उपयोग करें:",
+                "germination-step-1": "कागज़ तौलिये को गीला करें और उसमें कुछ बीज रखें।",
+                "germination-step-2": "बीजों पर कागज़ तौलिये को मोड़ें और उसे प्लास्टिक बैग में रखें।",
+                "germination-step-3": "बैग को गर्म स्थान पर रखें, जैसे कि फ्रिज के ऊपर।",
+                "germination-step-4": "कुछ दिनों बाद बीजों की जांच करें यह देखने के लिए कि क्या वे अंकुरित हुए हैं।",
+                "cut-test-title": "काटने का परीक्षण",
+                "cut-test-desc": "कुछ बीजों को सावधानी से काटें और अंदर की जाँच करें। एक स्वस्थ बीज का अंदर हिस्सा दृढ़ और सफेद होता है।",
+                "additional-notes-title": "अतिरिक्त नोट्स",
+                "additional-notes-desc": "सर्वोत्तम परिणामों के लिए, परीक्षण के लिए पर्याप्त बीजों की संख्या (कम से कम 10-20) का उपयोग करें। कुछ बीजों को अंकुरण के संकेत दिखाने में अधिक समय लग सकता है, इसलिए धैर्य रखें।"
+            },
+            ur: {
+                "seed-quality-heading": "بیج کی معیار کی جانچ",
+                "visual-inspection-title": "بصری معائنہ",
+                "visual-inspection-desc": "یکساں سائز، شکل اور رنگ چیک کریں۔ دراڑوں، پھپھوندی یا دیگر نقائص والے بیجوں سے گریز کریں۔",
+                "float-test-title": "فلوٹ ٹیسٹ",
+                "float-test-desc": "بیجوں کو پانی کے پیالے میں ڈالیں۔ قابل عمل بیج نیچے ڈوب جائیں گے، جبکہ ناقابل عمل بیج تیرتے رہیں گے۔ بیجوں کو تقریباً 15-30 منٹ تک بیٹھنے دیں۔",
+                "germination-test-title": "انکرن ٹیسٹ",
+                "germination-test-desc": "بیجوں کی قابلیت کو جانچنے کے لیے نم کاغذ کے تولیے، ایک پلاسٹک بیگ اور ایک گرم جگہ کا استعمال کریں:",
+                "germination-step-1": "کاغذ کے تولیے کو نم کریں اور اس پر کچھ بیج رکھیں۔",
+                "germination-step-2": "بیجوں پر کاغذ کا تولیہ موڑیں اور اسے پلاسٹک بیگ میں رکھیں۔",
+                "germination-step-3": "بیگ کو ایک گرم جگہ پر رکھیں، جیسے فریج کے اوپر۔",
+                "germination-step-4": "چند دنوں بعد بیجوں کو چیک کریں تاکہ یہ دیکھ سکیں کہ کیا وہ اُگے ہیں۔",
+                "cut-test-title": "کٹ ٹیسٹ",
+                "cut-test-desc": "کچھ بیجوں کو احتیاط سے کاٹیں اور اندر کا معائنہ کریں۔ ایک صحت مند بیج کا اندر مضبوط اور سفید ہوتا ہے۔",
+                "additional-notes-title": "اضافی نوٹس",
+                "additional-notes-desc": "بہترین نتائج کے لیے، جانچ کے لیے کافی تعداد میں بیج (کم سے کم 10-20) استعمال کریں۔ کچھ بیجوں کو انکرن کے آثار ظاہر کرنے میں زیادہ وقت لگ سکتا ہے، اس لیے صبر رکھیں۔"
+            }
+        };
+
+        // Get the language from the URL query parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const selectedLang = urlParams.get('lang') || 'en'; // Default to 'en' if no lang param exists
+
+        // Function to update content based on the selected language
+        function updateContent() {
+            document.querySelectorAll('[data-key]').forEach(element => {
+                const key = element.getAttribute('data-key');
+                element.textContent = translations[selectedLang][key] || element.textContent;
+            });
+        }
+
+        // Call the updateContent function to set content in the selected language
+        updateContent();
+    </script>
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-key="title">Flourishing Florals</title>
+    <link rel="stylesheet" href="Flower.css"> 
+</head>
+<body>
+
+<!--Header section starts-->
+<header>
+    <input type="checkbox" id="toggler">
+    <label for="toggler"></label>
+    <a href="#" class="logo" id="logo" data-key="title">Flourishing Florals<span>.</span></a>
+    <nav class="navbar">
+        <a href="#home" class="nav-link" data-key="home">Home</a>
+        <a href="#about" class="nav-link" data-key="about">About</a>
+        <a href="#features" class="nav-link" data-key="features">Features</a>
+        <a href="#contact" class="nav-link" data-key="contact">Contact</a>
+
+        <!-- Language Selector -->
+        <select id="languageSelect">
+            <option value="en">English</option>
+            <option value="te">తెలుగు</option>
+            <option value="hi">हिन्दी</option>
+            <option value="ur">اردو</option>
+        </select>
+    </nav>
+</header>
+<!--Header section ends-->
+
+<!--Home section starts-->
+<section class="home" id="home">
+    <div class="content">
+        <h3 data-key="home-title">Healthy Flowers</h3>
+        <span data-key="home-subtitle">Natural & beautiful flowers</span>
+        <p data-key="home-desc">Your Ultimate Guide to Growing Vibrant Flowering Plants</p>
+        <form action="fret.php" method="post">
+            <div style="display:flex;flex-direction: column;justify-content:space-between;height:30vh;">
+                <div>
+                    <input type="text" list="flowerList" name="s" class="b" placeholder="Select or type a flower" style="margin-right: 10px; flex: 1;">
+                    <!-- Datalist for dropdown options -->
+                    <datalist id="flowerList" data-key="flowerList">
+                        <option value="Chrysanthemum">
+                        <option value="Sunflower">
+                        <option value="Lily">
+                        <option value="Jasmine">
+                        <option value="Hibiscus">
+                        <option value="Marigold">
+                        <option value="Rose">
+                        <option value="Crossandra">
+                        <option value="Bougainvillea">
+                        <option value="Ixora">
+                        <option value="Plumeria">
+                    </datalist>
+                    <input type="submit" value="search" class="btn">
+                   <input type="hidden" id="selectedLang" name="lang" value="en">
+                </div>
+            <a href="planting.html" class="btn" id="plantingLink" data-key="plant">Planting time for different flowers</a>
+            <a href="seeds.html" class="btn" data-key="seed" id="seedQualityLink">Seed quality tests</a>
+            </div>
+        </form>
+    </div>
+</section>
+<!--Home section ends-->
+
+<!--About section starts-->
+<section class="about" id="about">
+    <h1 class="heading"><span data-key="about-heading">about</span> </h1>
+    <div class="row">
+        <div class="content">
+            <h3 data-key="about-title">Why Choose Us?</h3>
+            <p data-key="about-desc1">Here, we're passionate about empowering gardeners of all levels to grow vibrant, thriving flowering plants.</p>
+            <p data-key="about-desc2">Our Values:</p>
+            <p data-key="about-value1">- Passion for gardening and sharing knowledge</p>
+            <p data-key="about-value2">- Commitment to accuracy and reliability</p>
+            <p data-key="about-value3">- Dedication to inclusivity and accessibility</p>
+            <p data-key="about-value4">- Continuous learning and improvement</p>
+        </div>
+    </div>
+</section>
+<!--About section ends-->
+
+<!--Features section starts-->
+<section class="features" id="features">
+    <h1 class="heading"><span data-key="features-heading">Features</span></h1>
+    <div class="box-container">
+        <div class="content">
+            <h3 data-key="feature1-title">Soil Guide</h3>
+            <div class="info" data-key="feature1-desc">Learn about optimal soil types and pH levels</div>
+        </div>
+    </div>
+
+    <div class="box-container">
+        <div class="content">
+            <h3 data-key="feature2-title">Fertility</h3>
+            <div class="info" data-key="feature2-desc">Understand nutrient requirements for blooming beauty</div>
+        </div>
+    </div>
+
+    <div class="box-container">
+        <div class="content">
+            <h3 data-key="feature3-title">Irrigation Tips</h3>
+            <div class="info" data-key="feature3-desc">Master the art of watering for healthy growth</div>
+        </div>
+    </div>
+
+    <div class="box-container">
+        <div class="content">
+            <h3 data-key="feature4-title">Pest Control</h3>
+            <div class="info" data-key="feature4-desc">Identify and manage common pests and diseases</div>
+        </div>
+    </div>
+
+    <div class="box-container">
+        <div class="content">
+            <h3 data-key="feature5-title">Climate Considerations</h3>
+            <div class="info" data-key="feature5-desc">Find climate that suits your plant</div>
+        </div>
+    </div>
+</section>
+<!--Features section ends-->
+
+<!--Contact section starts-->
+<section class="contact" id="contact">
+    <h1 class="heading"><span data-key="contact-heading">Contact</span></h1>
+</section>
+<!--Contact section ends-->
+
+<!--Footer section starts-->
+<section class="footer">
+    <div class="box-container">
+        <div class="box">
+            <h3 data-key="contact-info">Contact Info</h3>
+            <a href="#">+91-9515855297</a>
+            <a href="#">florals123@gmail.com</a>
+            <a href="#">Gudlavalleru, Krishna</a>
+        </div>
+    </div>
+</section>
+<!--Footer section ends-->
+
+<script>
+    const translations = {
+        en: {
+             "title":"Flourishing Florals",
+            home: "Home",
+            about: "About Us",
+            features: "Features",
+            contact: "Contact Us",
+            logo: "Flourishing Florals",
+            "seed":"Seed quality tests",
+            "plant":"Planting time for different plants",
+            "home-title": "Healthy Flowers",
+            "home-subtitle": "Natural & beautiful flowers",
+            "home-desc": "Your Ultimate Guide to Growing Vibrant Flowering Plants",
+            "search":"search",
+            "about-heading": "about us",
+            "about-title": "Why Choose Us?",
+            "about-desc1": "At BloomHub, we're passionate about empowering gardeners of all levels to grow vibrant, thriving flowering plants.",
+            "about-desc2": "Our Values:",
+            "about-value1": "- Passion for gardening and sharing knowledge",
+            "about-value2": "- Commitment to accuracy and reliability",
+            "about-value3": "- Dedication to inclusivity and accessibility",
+            "about-value4": "- Continuous learning and improvement",
+            "features-heading": "Features",
+            "feature1-title": "Soil Guide",
+            "feature1-desc": "Learn about optimal soil types and pH levels",
+            "feature2-title": "Fertility",
+            "feature2-desc": "Understand nutrient requirements for blooming beauty",
+            "feature3-title": "Irrigation Tips",
+            "feature3-desc": "Master the art of watering for healthy growth",
+            "feature4-title": "Pest Control",
+            "feature4-desc": "Identify and manage common pests and diseases",
+            "feature5-title": "Climate Considerations",
+            "feature5-desc": "Find climate that suits your plant",
+            "contact-heading": "Contact Us",
+            "contact-info": "Contact Info",
+            "flowerList": ["Chrysanthemum", "Sunflower", "Lily", "Jasmine", "Hibiscus", "Marigold", "Rose", "Crossandra", "Bougainvillea", "Ixora", "Plumeria"]
+        },
+        te: {
+                        "title":"వికసించే పూలు",
+            home: "హోమ్",
+            about: "మా గురించి",
+            features: "లక్షణాలు",
+            contact: "సంప్రదించండి",
+            logo: "వర్ధమాన పువ్వులు",
+            "seed":"ఆవలి నాణ్యత పరీక్షలు",
+            "plant":"విభిన్న మొక్కల పుట్టు సమయం",
+            "home-title": "ఆరోగ్యవంతమైన పువ్వులు",
+            "home-subtitle": "సహజమైన మరియు అందమైన పువ్వులు",
+            "home-desc": "ఉత్తేజకరమైన పుష్పించే మొక్కలను పెంచడానికి మీకు మార్గదర్శకత్వం",
+            "search":"వెతకండి",
+            "about-heading": " మా గురించి",
+            "about-title": "మమ్మల్ని ఎందుకు ఎంచుకోవాలి?",
+            "about-desc1": "ఇచ్చట, అన్ని స్థాయిల గల తోటమాలులను ప్రోత్సహించడం మాకు సంతోషాన్ని ఇస్తుంది.",
+            "about-desc2": "మా విలువలు:",
+            "about-value1": "- తోటపని మరియు జ్ఞానాన్ని పంచుకోవడం పట్ల అభిరుచి",
+            "about-value2": "- ఖచ్చితత్వం మరియు విశ్వసనీయతకు నిబద్ధత",
+            "about-value3": "- సమ్మిళితత్వం మరియు ప్రాప్యతకు అంకితభావం",
+            "about-value4": "- నిరంతర అభ్యాసం మరియు మెరుగుదల",
+            "features-heading": "లక్షణాలు",
+            "feature1-title": "మట్టి యెక్క సమాచారం",
+            "feature1-desc": "సరైన నేల రకాలు మరియు పిహెచ్ స్థాయిల గురించి తెలుసుకోండి",
+            "feature2-title": "సారం",
+            "feature2-desc": "వికసించే అందం కోసం పోషక అవసరాలను అర్థం చేసుకోండి",
+            "feature3-title": "నీటి సిఫారసులు",
+            "feature3-desc": "ఆరోగ్యకరమైన ఎదుగుదల కొరకు నీరు పోసే కళను నేర్చుకోండి",
+            "feature4-title": "కీటక నియంత్రణ",
+            "feature4-desc": "సాధారణ తెగుళ్ళు మరియు వ్యాధులను గుర్తించడం మరియు నిర్వహించడం",
+            "feature5-title": "ఊష్ణోగ్రత సిఫారసులు",
+            "feature5-desc": "మీ మొక్కకు అనుకూల వాతావరణాన్ని కనుగొనండి",
+            "contact-heading": "సంప్రదించండి",
+            "contact-info": "సంప్రదించండి",
+            "flowerList": ["చామంతి", "పొద్దుతిరుగుడుపువ్వు", "లిల్లీ", "మల్లె", "మందారము", "బంతిపువ్వు", "గులాబీ", "కనకాంబరం", "కాగితంపువ్వు", "నూరు వరహాల పువ్వు", "దేవగన్నేరు"]
+
+        },
+        hi: {
+            "title": "फूलों की भरमार",
+            home: "होम",
+            about: "हमारे बारे में",
+            features: "विशेषताएं",
+            contact: "संपर्क करें",
+            logo: "फूलों की भरमार",
+            "seed": "बीज गुणवत्ता परीक्षण",
+            "plant":"विभिन्न पौधों के लिए रोपण समय",
+            "home-title": "स्वस्थ फूल",
+            "home-subtitle": "प्राकृतिक और सुंदर फूल",
+            "home-desc": "खिले हुए पौधों को उगाने के लिए आपकी संपूर्ण मार्गदर्शिका",
+            "search": "खोजें",
+            "about-heading": "हमारे बारे में",
+            "about-title": "हमें क्यों चुनें?",
+            "about-desc1": "यहां, हम सभी स्तरों के बागवानों को खिलते पौधे उगाने के लिए प्रेरित करने के लिए प्रतिबद्ध हैं।",
+            "about-desc2": "हमारे मूल्य:",
+            "about-value1": "- बागवानी और ज्ञान साझा करने के लिए जुनून",
+            "about-value2": "- सटीकता और विश्वसनीयता के प्रति प्रतिबद्धता",
+            "about-value3": "- समावेशिता और पहुंच के लिए समर्पण",
+            "about-value4": "- सतत सीखना और सुधार",
+            "features-heading": "विशेषताएं",
+            "feature1-title": "मिट्टी गाइड",
+            "feature1-desc": "इष्टतम मिट्टी प्रकार और पीएच स्तर के बारे में जानें",
+            "feature2-title": "उर्वरता",
+            "feature2-desc": "खिलने के लिए पोषक तत्व आवश्यकताओं को समझें",
+            "feature3-title": "सिंचाई युक्तियाँ",
+            "feature3-desc": "स्वस्थ विकास के लिए पानी देने की कला को जानें",
+            "feature4-title": "कीट नियंत्रण",
+            "feature4-desc": "सामान्य कीटों और रोगों की पहचान करें और प्रबंधित करें",
+            "feature5-title": "जलवायु विचार",
+            "feature5-desc": "अपने पौधे के लिए उपयुक्त जलवायु पाएं",
+            "contact-heading": "संपर्क करें",
+            "contact-info": "संपर्क जानकारी",
+            "flowerList": ["गुलदाउदी", "सूरजमुखी", "लिली", "चमेली", "अड़हुल", "गेंदा", "गुलाब", "अबोली", "बोगनविलिया", "रग्मिनी", "चम्पा"]
+        },
+        ur: {
+            "title": "پھولوں کی خوشبو",
+            home: "ہوم",
+            about: "ہمارے بارے میں",
+            features: "خصوصیات",
+            contact: "رابطہ کریں",
+            logo: "پھولوں کی خوشبو",
+            "seed":"بیج کی معیار کی جانچ",
+            "plant":"مختلف پودوں کے لیے بوائی کا وقت",
+            "home-title": "صحت مند پھول",
+            "home-subtitle": "قدرتی اور خوبصورت پھول",
+            "home-desc": "پھولوں والے پودے اگانے کی آپ کی مکمل رہنمائی",
+            "search": "تلاش کریں",
+            "about-heading": "ہمارے بارے میں",
+            "about-title": "ہمیں کیوں منتخب کریں؟",
+            "about-desc1": "یہاں، ہم ہر سطح کے باغبانوں کو پھولدار پودے اگانے کی ترغیب دینے کے لئے پرعزم ہیں۔",
+            "about-desc2": "ہماری اقدار:",
+            "about-value1": "- باغبانی اور علم کی شراکت کے لئے جذبہ",
+            "about-value2": "- درستگی اور اعتماد کی وابستگی",
+            "about-value3": "- شمولیت اور رسائی کے لئے عزم",
+            "about-value4": "- مسلسل سیکھنے اور بہتری",
+            "features-heading": "خصوصیات",
+            "feature1-title": "مٹی کی رہنمائی",
+            "feature1-desc": "بہترین مٹی کی اقسام اور پی ایچ لیولز کے بارے میں جانیں",
+            "feature2-title": "زرخیزی",
+            "feature2-desc": "پھولنے کے لئے غذائی اجزاء کی ضروریات کو سمجھیں",
+            "feature3-title": "آبپاشی کی تجاویز",
+            "feature3-desc": "صحت مند نمو کے لئے پانی دینے کی مہارت سیکھیں",
+            "feature4-title": "کیڑوں کا کنٹرول",
+            "feature4-desc": "عام کیڑوں اور بیماریوں کی شناخت اور انتظام کریں",
+            "feature5-title": "آب و ہوا کے خیالات",
+            "feature5-desc": "اپنے پودے کے لئے موزوں آب و ہوا تلاش کریں",
+            "contact-heading": "رابطہ کریں",
+            "contact-info": "رابطے کی معلومات",
+            "flowerList": ["گل داؤدی", "سورج مکھی", "کمل", "چمیلی", "جنس پٹوہ", "گیندے کا سونا", "گلاب", "ابولی", "بوگن ویلیا", "آئکسورا", "ایک قسم کی مٹھائی اور خوشبو"]
+        }
+    };
+    function populateFlowerOptions(language) {
+        const flowerList = document.getElementById('flowerList');
+        flowerList.innerHTML = ''; // Clear existing options
+        translations[language].flowerList.forEach(flower => {
+            const option = document.createElement('option');
+            option.value = flower;
+            flowerList.appendChild(option);
+        });
+    }
+
+    document.getElementById('languageSelect').addEventListener('change', function () {
+        const selectedLang = this.value;
+        document.getElementById('selectedLang').value = selectedLang;
+        
+        // Update text content for all data-key elements
+        document.querySelectorAll('[data-key]').forEach(element => {
+            const key = element.getAttribute('data-key');
+            element.textContent = translations[selectedLang][key] || element.textContent;
+        });
+
+        // Populate the dropdown list with the relevant flower names
+        populateFlowerOptions(selectedLang);
+    });
+
+    // Initialize the page with English options
+    populateFlowerOptions('en');
+</script>
+<script>
+    // Pass selected language to the Planting Calendar page
+    document.getElementById('languageSelect').addEventListener('change', function() {
+        const selectedLang = this.value;
+        const plantingLink = document.getElementById('plantingLink');
+        plantingLink.href = `planting.html?lang=${selectedLang}`;  // Pass the language to the URL
+    });
+</script>
+<script>
+    // Pass selected language to the Seed Quality page
+    document.getElementById('languageSelect').addEventListener('change', function() {
+        const selectedLang = this.value;
+        const seedQualityLink = document.getElementById('seedQualityLink');
+        seedQualityLink.href = `seeds.html?lang=${selectedLang}`;  // Pass the language to the URL
+    });
+</script>
+</body>
+</html>

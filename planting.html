@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Flower.css">
+    <title>Planting Calendar</title>
+</head>
+<body>
+<!--Planting Calendar section starts-->
+<section class="calendar" id="calendar">
+    <h1 class="heading"><span data-key="calendar-heading">Planting Calendar</span></h1>
+    <div class="content">
+        <h3 data-key="calendar-title">Best Planting Times for Flowering Plants</h3>
+        <form id="calendarForm">
+            <label for="region" data-key="calendar-region">Select Your Region:</label>
+            <select id="region">
+                <option value="coastal" data-key="coastal">Coastal</option>
+                <option value="drought" data-key="drought">Drought-Prone</option>
+                <option value="wet" data-key="wet">Wet Region</option>
+                <option value="hill" data-key="hill">Hill Region</option>
+            </select>
+            <button type="button" data-key="show-calendar-button" onclick="showCalendar()">Show Calendar</button>
+        </form>
+        <table id="plantingTable" style="display:none;">
+            <thead>
+                <tr>
+                    <th data-key="month-heading">Month</th>
+                    <th data-key="flowering-plants-heading">Flowering Plants</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <!-- Rows will be dynamically added here -->
+            </tbody>
+        </table>
+    </div>
+</section>
+<!--Planting calendar section ends-->
+<script>
+    const translations = {
+        en: {
+            "calendar-heading": "Planting Calendar",
+            "calendar-title": "Best Planting Times for Flowering Plants",
+            "calendar-region": "Select Your Region",
+            "show-calendar-button": "Show Calendar",
+            "month-heading": "Month",
+            "flowering-plants-heading": "Flowering Plants",
+            "coastal": "Coastal",
+            "drought": "Drought-Prone",
+            "wet": "Wet Region",
+            "hill": "Hill Region",
+            January: "January",
+            February: "February",
+            March: "March",
+            April: "April",
+            May: "May",
+            June: "June",
+            July: "July",
+            August: "August",
+            September: "September",
+            October: "October",
+            November: "November",
+            December: "December",
+            "Rose": "Rose",
+            "Hibiscus": "Hibiscus",
+            "Lily": "Lily",
+            "Plumeria": "Plumeria",
+            "Sunflower": "Sunflower",
+            "Jasmine": "Jasmine",
+            "Crossandra": "Crossandra",
+            "Marigold": "Marigold",
+            "Bougainvillea": "Bougainvillea",
+            "Ixora": "Ixora",
+            "Chrysanthemum": "Chrysanthemum"
+        },
+        te: {
+            "calendar-heading": "మొక్కల క్యాలెండర్",
+            "calendar-title": "పుష్పించే మొక్కల కోసం ఉత్తమ మొక్కల పుట్టు సమయాలు",
+            "calendar-region": "మీ ప్రాంతాన్ని ఎంచుకోండి",
+            "show-calendar-button": "క్యాలెండర్ చూపించండి",
+            "month-heading": "మాసం",
+            "flowering-plants-heading": "పుష్పించే మొక్కలు",
+            "coastal": "సముద్ర తీర",
+            "drought": "ఎండ ప్రాంతం",
+            "wet": "నీటి ప్రాంతం",
+            "hill": "పర్వత ప్రాంతం",
+            January: "జనవరి",
+            February: "ఫిబ్రవరి",
+            March: "మార్చి",
+            April: "ఏప్రిల్",
+            May: "మే",
+            June: "జూన్",
+            July: "జూలై",
+            August: "ఆగస్టు",
+            September: "సెప్టెంబర్",
+            October: "అక్టోబర్",
+            November: "నవంబర్",
+            December: "డిసెంబర్",
+            "Rose": "గులాబీ",
+            "Hibiscus": "మందారము",
+            "Lily": "కమల్",
+            "Plumeria": "ప్ల్యూమేరియా",
+            "Sunflower": "పొద్దుతిరుగుడు పువ్వు",
+            "Jasmine": "మల్లె",
+            "Crossandra": "కనకాంబరం",
+            "Marigold": "గెందే",
+            "Bougainvillea": "బోగన్విలియా",
+            "Ixora": "ఐక్సోరా",
+            "Chrysanthemum": "చామంతి"
+        },
+        hi: {
+            "calendar-heading": "पौधों का कैलेंडर",
+            "calendar-title": "फूलों वाले पौधों के लिए सर्वोत्तम रोपण समय",
+            "calendar-region": "अपना क्षेत्र चुनें",
+            "show-calendar-button": "कैलेंडर दिखाएँ",
+            "month-heading": "माह",
+            "flowering-plants-heading": "फूलों वाले पौधे",
+            "coastal": "तटीय",
+            "drought": "सूखा क्षेत्र",
+            "wet": "वर्षा क्षेत्र",
+            "hill": "पहाड़ी क्षेत्र",
+            January: "जनवरी",
+            February: "फरवरी",
+            March: "मार्च",
+            April: "अप्रैल",
+            May: "मई",
+            June: "जून",
+            July: "जुलाई",
+            August: "अगस्त",
+            September: "सितंबर",
+            October: "अक्टूबर",
+            November: "नवंबर",
+            December: "दिसंबर",
+            "Rose": "गुलाब",
+            "Hibiscus": "अड़हुल",
+            "Lily": "कमल",
+            "Plumeria": "प्लुमेरिया",
+            "Sunflower": "सूरजमुखी",
+            "Jasmine": "चमेली",
+            "Crossandra": "अबोली",
+            "Marigold": "गेंदा",
+            "Bougainvillea": "बोगनविलिया",
+            "Ixora": "आईक्सोरा",
+            "Chrysanthemum": "गुलदाउदी"
+        },
+        ur: {
+            "calendar-heading": "پودوں کا کیلنڈر",
+            "calendar-title": "خوبصورت پودوں کے لئے بہترین بیجوں کا وقت",
+            "calendar-region": "اپنا علاقہ منتخب کریں",
+            "show-calendar-button": "کیاالینڈ دکھائیں",
+            "month-heading": "مہینہ",
+            "flowering-plants-heading": "پھولوں والے پودے",
+            "coastal": "سمندری کنارے",
+            "drought": "خشک علاقہ",
+            "wet": "نم علاقہ",
+            "hill": "پہاڑی علاقہ",
+            January: "جنوری",
+            February: "فروری",
+            March: "مارچ",
+            April: "اپریل",
+            May: "مئی",
+            June: "جون",
+            July: "جولائی",
+            August: "اگست",
+            September: "ستمبر",
+            October: "اکتوبر",
+            November: "نومبر",
+            December: "دسمبر",
+            "Rose": "گلاب",
+            "Hibiscus": "مندر",
+            "Lily": "کمل",
+            "Plumeria": "پلومیریا",
+            "Sunflower": "سورج مکھی",
+            "Jasmine": "چمبیلی",
+            "Crossandra": "ابولی",
+            "Marigold": "گلابی پودا",
+            "Bougainvillea": "بوگن ویلیا",
+            "Ixora": "آئکسورا",
+            "Chrysanthemum": "گلابی پودا"
+        }
+    };
+
+    const plantingData = {
+        coastal: {
+            January: "Rose",
+            February: "Hibiscus, Lily",
+            March: "Plumeria, Sunflower",
+            April: "Hibiscus, Lily, Bougainvillea, Ixora",
+            May: "Marigold, Sunflower",
+            June: "Jasmine, Crossandra",
+            July: "Chrysanthemum",
+            August: "Jasmine",
+            September: "Chrysanthemum",
+            October: "Hibiscus",
+            November: "Marigold",
+            December: "Rose"
+        },
+        drought: {
+            January: "Rose",
+            February: "Hibiscus",
+            March: "Plumeria, Sunflower",
+            April: "Bougainvillea, Ixora",
+            May: "Marigold, Sunflower",
+            June: "Jasmine, Crossandra",
+            July: "Chrysanthemum",
+            August: "Marigold",
+            September: "Chrysanthemum",
+            October: "Hibiscus",
+            November: "Rose",
+            December: "Lily"
+        },
+        wet: {
+            January: "Rose",
+            February: "Lily",
+            March: "Sunflower",
+            April: "Ixora, Bougainvillea",
+            May: "Marigold",
+            June: "Crossandra",
+            July: "Chrysanthemum",
+            August: "Jasmine",
+            September: "Chrysanthemum",
+            October: "Hibiscus",
+            November: "Marigold",
+            December: "Rose"
+        },
+        hill: {
+            January: "Rose",
+            February: "Hibiscus",
+            March: "Plumeria",
+            April: "Ixora, Lily",
+            May: "Sunflower",
+            June: "Crossandra",
+            July: "Chrysanthemum",
+            August: "Jasmine",
+            September: "Chrysanthemum",
+            October: "Hibiscus",
+            November: "Marigold",
+            December: "Rose"
+        }
+    };
+
+    // Get the language from the URL query parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const selectedLang = urlParams.get('lang') || 'en'; // Default to 'en' if no lang param exists
+
+    function showCalendar() {
+        const region = document.getElementById('region').value;
+        const tableBody = document.getElementById('tableBody');
+        const data = plantingData[region];
+
+        tableBody.innerHTML = ""; // Clear previous rows
+
+        for (const [month, plants] of Object.entries(data)) {
+            const row = document.createElement('tr');
+            const monthCell = document.createElement('td');
+            const plantsCell = document.createElement('td');
+
+            // Translate month and flower names based on selected language
+            monthCell.textContent = translations[selectedLang][month] || month;
+            plantsCell.textContent = plants.split(', ').map(flower => translations[selectedLang][flower] || flower).join(', ');
+
+            row.appendChild(monthCell);
+            row.appendChild(plantsCell);
+            tableBody.appendChild(row);
+        }
+
+        // Update headings and button labels
+        document.querySelectorAll('[data-key]').forEach(element => {
+            const key = element.getAttribute('data-key');
+            element.textContent = translations[selectedLang][key] || element.textContent;
+        });
+
+        document.getElementById('plantingTable').style.display = 'table';
+    }
+
+    // Initialize table with the correct language
+    showCalendar();
+</script>
+</body>
+</html>
